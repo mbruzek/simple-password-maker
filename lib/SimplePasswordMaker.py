@@ -31,6 +31,8 @@ class SimplePasswordMaker:
         '''Generate the password using the provided hash algorithm.'''
         self.verify_algorithm(algorithm)
         hash = hashlib.new(algorithm)
+        # Since we are only using normal hash algorithms include master in data.
+        hash.update(master.encode('utf-8'))
         # Add the data to the hash algorithm.
         hash.update(data.encode('utf-8'))
         digest = hash.digest()
