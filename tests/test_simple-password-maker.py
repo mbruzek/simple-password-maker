@@ -18,12 +18,12 @@ class TestPasswordMaker(unittest.TestCase):
     def test_algortihms(self):
         '''Test each algorithm with empty data, 8 length, default charset.'''
         expected = {
-            ALGORITHMS[0]: 'YdudxA[E',
-            ALGORITHMS[1]: 'e5(yAN.N',
-            ALGORITHMS[2]: 'V-Cuq6rN',
-            ALGORITHMS[3]: 'n?I%6#cU',
-            ALGORITHMS[4]: '4?C,>;44',
-            ALGORITHMS[5]: 'Tll1gz{B'
+            ALGORITHMS[0]: 'YdudxA:E',
+            ALGORITHMS[1]: 'e5^yAN-N',
+            ALGORITHMS[2]: 'V_Cuq6rN',
+            ALGORITHMS[3]: 'n]I#6!cU',
+            ALGORITHMS[4]: '4]C)[{44',
+            ALGORITHMS[5]: 'Tll1gz?B'
         }
         maker = SimplePasswordMaker()
         for algorithm in ALGORITHMS:
@@ -48,12 +48,12 @@ class TestPasswordMaker(unittest.TestCase):
     def test_data(self):
         '''Test with iterations of the data, ensure the passwords match.'''
         expected = {
-            ALGORITHMS[0]: 'm#T/*ny133',
-            ALGORITHMS[1]: 'j%t%p^O!Pi',
-            ALGORITHMS[2]: ',I[cn\O8tJ',
-            ALGORITHMS[3]: 'qYmRYqzvT{',
-            ALGORITHMS[4]: 'RH\#R0^q9k',
-            ALGORITHMS[5]: 'cCvgC<Q$pc'
+            ALGORITHMS[0]: 'm!T+*ny133',
+            ALGORITHMS[1]: 'j#t#p\'O`Pi',
+            ALGORITHMS[2]: ')I:cn"O8tJ',
+            ALGORITHMS[3]: 'qYmRYqzvT?',
+            ALGORITHMS[4]: 'RH"!R0\'q9k',
+            ALGORITHMS[5]: 'cCvgC}Q@pc'
         }
         maker = SimplePasswordMaker()
         for algorithm in ALGORITHMS:
