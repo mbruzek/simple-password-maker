@@ -24,8 +24,10 @@ import sys
 class SimplePasswordMaker:
     '''Main class used for generating passwords.'''
     # The default charset is uppercase + lowercase + digits + punctuation
-    CHARSET = string.ascii_uppercase + string.ascii_lowercase + \
-              string.digits + string.punctuation
+    #CHARSET = string.ascii_uppercase + string.ascii_lowercase + \
+    #          string.digits + string.punctuation
+    # Password maker's charset.
+    CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`~!@#$%^&*()_-+={}|[]\\:\";\'<>?,./"
 
     def generate_password(self, algorithm, master, data, length, charset):
         '''Generate the password using the provided hash algorithm.'''
