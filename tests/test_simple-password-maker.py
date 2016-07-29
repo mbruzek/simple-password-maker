@@ -62,7 +62,7 @@ class TestPasswordMaker(unittest.TestCase):
                 (one, expected[algorithm])
             two = maker.generate_password(algorithm, '', 'abcd', '10', CHARSET)
             assert one == two, '2. Mismatch %s != %s' % (one, two)
-            three = maker.generate_password(algorithm, 'ab', 'cd', '10', CHARSET)
+            three = maker.generate_password(algorithm, 'ab', 'cd', '10', CHARSET)  # noqa
             assert one == three, '3. Mismatch %s != %s' % (one, three)
 
 
