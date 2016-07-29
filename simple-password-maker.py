@@ -99,9 +99,9 @@ def interactive():
 def prompt(message, default=None):
     '''A method to prompt the user for a value.'''
     if default:
-        return raw_input('{0} [{1}]: '.format(message, default)) or default
+        return raw_input('{0} [{1}]: '.format(message, default)) or default  # noqa
     else:
-        return raw_input('{0} : '.format(message))
+        return raw_input('{0} : '.format(message))  # noqa
 
 
 if __name__ == '__main__':

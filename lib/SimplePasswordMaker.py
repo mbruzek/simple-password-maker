@@ -25,13 +25,13 @@ class SimplePasswordMaker:
     '''Main class used for generating passwords.'''
     # The default charset is uppercase + lowercase + digits + punctuation
     CHARSET = string.ascii_uppercase + string.ascii_lowercase + \
-              string.digits + string.punctuation
+        string.digits + string.punctuation
 
     def generate_password(self, algorithm, master, data, length, charset):
         '''Generate the password using the provided hash algorithm.'''
         self.verify_algorithm(algorithm)
         hash = hashlib.new(algorithm)
-        # Since we are only using normal hash algorithms include master in data.
+        # Since we are only using normal hash algorithms include master in data
         hash.update(master.encode('utf-8'))
         # Add the data to the hash algorithm.
         hash.update(data.encode('utf-8'))
