@@ -98,11 +98,19 @@ def interactive():
 
 def prompt(message, default=None):
     '''A method to prompt the user for a value.'''
-    if default:
-        return raw_input('{0} [{1}]: '.format(message, default)) or default
-    else:
-        return raw_input('{0} : '.format(message))
 
+    import sys
+    version = sys.version_info
+    if version.major == 2:
+        if default:
+            return raw_input('{0} [{1}]: '.format(message, default)) or default
+        else:
+            return raw_input('{0}: '.format(message))
+    else:
+        if default:
+            return input('{0} [{1}]: '.format(message, default)) or default
+        else:
+            return input('{0}: '.format(message))
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
