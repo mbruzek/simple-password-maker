@@ -1,7 +1,6 @@
 language: python
 install: pytest
 python:
-  - "3.4"
   - "3.5"
 # command to run tests
 script: pytest tests/
