@@ -1,4 +1,4 @@
-'''
+"""
 SimplePasswordMaker creates passwords with hash functions.
 
 Copyright 2016 Matthew Bruzek
@@ -14,7 +14,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-'''
+"""
 
 import hashlib
 import string
@@ -22,16 +22,16 @@ import sys
 
 
 class SimplePasswordMaker:
-    '''Main class used for generating passwords.'''
+    """Main class used for generating passwords."""
     # The default charset is uppercase + lowercase + digits + punctuation
     CHARSET = string.ascii_uppercase + string.ascii_lowercase + \
-              string.digits + string.punctuation
+        string.digits + string.punctuation
 
     def generate_password(self, algorithm, master, data, length, charset):
-        '''Generate the password using the provided hash algorithm.'''
+        """Generate the password using the provided hash algorithm."""
         self.verify_algorithm(algorithm)
         hash = hashlib.new(algorithm)
-        # Since we are only using normal hash algorithms include master in data.
+        # Add the master to the hash data.
         hash.update(master.encode('utf-8'))
         # Add the data to the hash algorithm.
         hash.update(data.encode('utf-8'))
@@ -42,10 +42,10 @@ class SimplePasswordMaker:
         if pwd_len > digest_length:
             pwd_len = digest_length
         # Return a string with characters only from the charset.
-        return ''.join(charset[ord(digest[a]) % len(charset)] for a in range(pwd_len))  # noqa
+        return ''.join(charset[digest[a] % len(charset)] for a in range(pwd_len))  # noqa
 
     def verify_algorithm(self, algorithm):
-        '''Verify that the hash algorithm is valid.'''
+        """Verify that the hash algorithm is valid."""
         if sys.version[:5] >= '2.7.9':
             algorithms = hashlib.algorithms_available
         else:

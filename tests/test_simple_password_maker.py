@@ -16,7 +16,7 @@ HEX_CHARS = '0123456789ABCDEF'
 class TestPasswordMaker(unittest.TestCase):
 
     def test_algortihms(self):
-        '''Test each algorithm with empty data, 8 length, default charset.'''
+        """Test each algorithm with empty data, 8 length, default charset."""
         expected = {
             ALGORITHMS[0]: 'YdudxA[E',
             ALGORITHMS[1]: 'e5(yAN.N',
@@ -31,7 +31,7 @@ class TestPasswordMaker(unittest.TestCase):
             assert result == expected[algorithm], '%s failed' % algorithm
 
     def test_hexadecimal(self):
-        '''Test each algorithm with empty data, 9 length, hex charset.'''
+        """Test each algorithm with empty data, 9 length, hex charset."""
         expected = {
             ALGORITHMS[0]: '4DC9F0249',
             ALGORITHMS[1]: 'A93EEBBD2',
@@ -46,7 +46,7 @@ class TestPasswordMaker(unittest.TestCase):
             assert result == expected[algorithm], '%s failed' % algorithm
 
     def test_data(self):
-        '''Test with iterations of the data, ensure the passwords match.'''
+        """Test with iterations of the data, ensure the passwords match."""
         expected = {
             ALGORITHMS[0]: 'm#T/*ny133',
             ALGORITHMS[1]: 'j%t%p^O!Pi',
@@ -62,7 +62,7 @@ class TestPasswordMaker(unittest.TestCase):
                 (one, expected[algorithm])
             two = maker.generate_password(algorithm, '', 'abcd', '10', CHARSET)
             assert one == two, '2. Mismatch %s != %s' % (one, two)
-            three = maker.generate_password(algorithm, 'ab', 'cd', '10', CHARSET)
+            three = maker.generate_password(algorithm, 'ab', 'cd', '10', CHARSET)  # noqa
             assert one == three, '3. Mismatch %s != %s' % (one, three)
 
 
