@@ -1,6 +1,6 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
-'''
+"""
 simple-password-maker the command line wrapper for the SimplePasswordMaker lib.
 
 Copyright 2016 Matthew Bruzek
@@ -16,7 +16,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-'''
+"""
 import argparse
 import sys
 import traceback
@@ -35,7 +35,7 @@ DEFAULT_CHARSET = SimplePasswordMaker.CHARSET
 
 
 def command_line():
-    '''The function to parse the arguments from the command line.'''
+    """The function to parse the arguments from the command line."""
     description = "Make passwords based on user input."
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('-a', '--algorithm',
@@ -70,7 +70,7 @@ def command_line():
 
 
 def interactive():
-    '''The function to interactivly prompt the user the possible values.'''
+    """The function to interactivly prompt the user the possible values."""
     options = {}
     try:
         options['algorithm'] = prompt(HASH, 'sha256')
@@ -97,11 +97,11 @@ def interactive():
 
 
 def prompt(message, default=None):
-    '''A method to prompt the user for a value.'''
+    """A method to prompt the user for a value, with an optional default."""
     if default:
-        return raw_input('{0} [{1}]: '.format(message, default)) or default
+        return input('{0} [{1}]: '.format(message, default)) or default
     else:
-        return raw_input('{0} : '.format(message))
+        return input('{0}: '.format(message))
 
 
 if __name__ == '__main__':

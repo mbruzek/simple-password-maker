@@ -1,23 +1,22 @@
 # Simple Password Maker
 
-Use the python hash methods to generate passwords for input values and
-options.
+Use the python hash methods to generate passwords for input values and options.
 
 # Usage
 
 To run the script interactively:
 ```bash
-./simple-password-maker.py
+./simple_password_maker.py
 ```
 
 Or run the program with the flags:
 ```bash
-./simple-password-maker.py -a sha256 -m password -r github.com -u user -d modifier -g 20 -c 0123456789abcdef
+./simple_password_maker.py -a sha256 -m password -r github.com -u user -d modifier -g 20 -c 0123456789abcdef
 ```
 
 Use the `-h` or `--help` flag for usage and description of the flags:
 ```bash
-./simple-password-maker.py -h
+./simple_password_maker.py -h
 ```
 
 # License
