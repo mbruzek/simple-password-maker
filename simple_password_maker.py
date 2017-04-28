@@ -55,6 +55,8 @@ def command_line():
                         help='{0} [{1}]'.format(CHARSET, printable_charset))
     arguments = parser.parse_args()
 
+
+
     try:
         maker = SimplePasswordMaker()
         print(maker.generate_password(
